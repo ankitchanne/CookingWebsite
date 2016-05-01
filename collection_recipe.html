@@ -1,0 +1,125 @@
+<html>
+<head>
+
+<link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" href="css/classes.css">
+<link href='https://fonts.googleapis.com/css?family=Merienda' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="script/jquery-1.12.2.min.js"></script>
+<script type="text/javascript" src="script/load_recipe.js"></script>
+
+<script>
+var data;var margin=35;
+/*function displayR(url)
+{
+	document.getElementById("lri").src=url+"?blabla=blabla";
+	document.getElementById("load_recipe").style.display="inline-block";
+}
+*/
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+     data=JSON.parse(xhttp.responseText);
+	for(var i=0;i<(data.length-1);i++)
+	{
+	if(i%4==0){margin=35}else{margin=20;}
+	document.getElementById("main_container").innerHTML+= "<div class=\"w3-card-4 merienda-font\" style=\"margin-left:"+margin+";width: 20%;margin-top:40;margin-right:20; font-weight:600;color:#795548; display:inline-block\"><img name=\""+data[i][0]+"\" src=\"" + data[i][1]+"\" width=\"100%\">	<div class=\"w3-container w3-center\" style=\"font-size:18\"><p >"+data[i][0]+"</p>	</div>	</div>";
+	}
+    }
+  };
+  xhttp.open("GET", "print_array.php", true);
+  xhttp.send();
+}
+
+
+function loadRec(rec)
+{	
+	var c = rec;
+	console.log(c);
+}
+</script>
+</head>
+<body onload="loadDoc()" class="w3-brown"sstyle="background-color:#00BCD4">
+<div id="main_container" class="w3-card-12 w3-white" 
+	style="
+    position: absolute;
+    top: 5%;
+    margin-left: 10%;
+	width:1100;
+	height:auto;
+	">
+	<!--<div class="w3-card-12 merienda-font" style="margin-left:35;width: 20%;margin-top:40;margin-right:20; font-weight:600;color:#795548; display:inline-block">
+	<img src="rec1.jpg" width="100%">
+	<div class="w3-container w3-center" style="font-size:18">
+	<p >Mixed Veg pokoda </p>
+	</div>
+	</div>
+	
+	<div class="w3-card-12 merienda-font" style="margin: 20;width: 20%;margin-top:40;font-weight:600;color:#795548; display:inline-block">
+	<img src="rec1.jpg" width="100%">
+	<div class="w3-container w3-center" style="font-size:18">
+	<p >Mixed Veg pokoda </p>
+	</div>
+	</div>
+	
+	
+	<div class="w3-card-12 merienda-font" style="margin: 20;width: 20%;margin-top:40;font-weight:600;color:#795548; display:inline-block">
+	<img src="rec1.jpg" width="100%">
+	<div class="w3-container w3-center" style="font-size:18">
+	<p >Mixed Veg pokoda </p>
+	</div>
+	</div>
+	
+	
+	<div class="w3-card-12 merienda-font" style="margin: 20;width: 20%;margin-top:40;font-weight:600;color:#795548; display:inline-block">
+	<img src="rec1.jpg" width="100%">
+	<div class="w3-container w3-center" style="font-size:18">
+	<p >Mixed Veg pokoda </p>
+	</div>
+	</div>
+	
+	<div class="w3-card-12 merienda-font" style="margin-left:35;width: 20%;margin-top:40;margin-right:20; font-weight:600;color:#795548; display:inline-block">
+	<img src="rec1.jpg" width="100%">
+	<div class="w3-container w3-center" style="font-size:18">
+	<p >Mixed Veg pokoda </p>
+	</div>
+	</div>	
+	
+	<div class="w3-card-12 merienda-font" style="margin: 20;width: 20%;margin-top:40;font-weight:600;color:#795548; display:inline-block">
+	<img src="rec1.jpg" width="100%">
+	<div class="w3-container w3-center" style="font-size:18">
+	<p >Mixed Veg pokoda </p>
+	</div>
+	</div>
+	
+	<div class="w3-card-12 merienda-font" style="margin: 20;width: 20%;margin-top:40;font-weight:600;color:#795548; display:inline-block">
+	<img src="rec1.jpg" width="100%">
+	<div class="w3-container w3-center" style="font-size:18">
+	<p >Mixed Veg pokoda </p>
+	</div>
+	</div>
+	
+	<div class="w3-card-12 merienda-font" style="margin: 20;width: 20%;margin-top:40;font-weight:600;color:#795548; display:inline-block">
+	<img src="rec1.jpg" width="100%">
+	<div class="w3-container w3-center" style="font-size:18">
+	<p >Mixed Veg pokoda </p>
+	</div>
+	</div>-->
+	
+	
+	
+	
+	
+</div>
+<div id="load_recipe" style="position: absolute;
+    top: 5%;
+    margin-left:10;
+	width:1100;
+	height:100%;
+	color:#000;
+	display:none"></div>
+
+
+
+</body>
+</html>

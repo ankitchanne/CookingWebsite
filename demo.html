@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo</title>
+	<link rel="stylesheet" type="text/css" href="css/load.css">
+	<script type="text/javascript">
+	document.onreadystatechange = function () {
+ 	var state = document.readyState
+  	if (state == 'interactive') {
+       document.getElementById('main').style.visibility="hidden";
+ 		 } 
+
+ 		else if (state == 'complete') {
+     	 setTimeout(function(){
+         document.getElementById('interactive');
+         document.getElementById('loading').style.visibility="hidden";
+         document.getElementById('main').style.visibility="visible";
+      },1000);
+  }
+}
+	</script>
+	
+</head>
+<body>
+	<div id="loading"></div>
+	<div id="main">hello</div>
+</body>
+</html>

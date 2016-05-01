@@ -1,0 +1,88 @@
+
+<html lang="en">
+<head>
+	<link rel="stylesheet" type="text/css" href="css/text.css">
+	<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<style type="text/css">
+	#main
+	{
+		background-size: cover;
+		background-image: url("images/background0.jpg");
+
+	}
+
+
+	</style>
+	<meta charset="UTF-8">
+	<title>Index</title>
+
+	<script src="script/jquery-1.12.2.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			
+			setTimeout(hi,3000);
+			$('#food_icon').click(function()
+			{
+				console.log('clicked');
+				$('#main').addClass('animated slideOutUp');
+				setTimeout(redirect,1000);
+		})
+		})
+
+		function redirect () {
+			window.location.assign('collection_recipe.html');
+		}
+
+		function hi()
+		{
+			$('#hi').addClass('animated fadeIn');
+			document.getElementById('hi').style.display="block";
+			
+			setTimeout(welcome,1000);
+		}
+
+		function welcome()
+		{
+			$('#hi').addClass('animated fadeOut');
+			$('#welcome').addClass('animated fadeIn');
+			$('#logo').addClass('animated bounceInUp')
+			$('#welcome').show();
+			setTimeout(logo,3000);
+		}
+
+		function logo()
+		{
+			$('#welcome').addClass('fadeOut');
+			$('#trans').addClass('animated fadeOut');
+			
+
+			$('#logo').show();
+			$('#food_icon').addClass('animated rubberBand');
+			$('#trans').hide();
+			$('#food_icon').show();
+		}
+
+
+	</script>
+</head>
+<body style="margin:0px">
+<div id="main">
+	<div id="trans">
+		<p id="hi" > Hi ..</p>
+	</div>
+	<div id="welcome">
+		Welcome to..
+	</div>	
+	<div id="logo">
+		Spice in life
+	</div>
+	<div id="food_icon">
+		<img src="images/food.png" alt="icon">
+		<img src="images/food_2.png">
+	</div>
+</div>
+</body>
+</html>
